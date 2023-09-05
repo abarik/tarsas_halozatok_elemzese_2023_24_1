@@ -1,0 +1,58 @@
+[
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Társas hálózatok elemzése",
+    "section": "",
+    "text": "1 A kurzusról\nA hálózatkutatás bár a 2000-es években futott fel igazán a társadalomtudományokban, de a gyökerei már a szociológia kezdeteitől jelen voltak. A kurzus azt a célt tűzi ki, hogy a hallgatókat megismertesse a kapcsolathálózati és hálózatkutatási gondolkodás legfontosabb elméleti és módszertani alapvetéseivel. A kurzus során megismerkedhetnek a hallgatók az alapvető gráfelméleti fogalmakkal és a teljes hálózatokat elemző módszerekkel, valamint a szociometriai kutatási irányokkal is. Hangsúlyosan olyan tanulmányokat dolgozunk fel, amik a leginkább releváns hálózatelemzési kérdésekkel foglalkoznak. A kurzuson belül kitérünk a hazai hálózatkutatás legfrissebb eredményeire is."
+  },
+  {
+    "objectID": "index.html#elérhetőség",
+    "href": "index.html#elérhetőség",
+    "title": "Társas hálózatok elemzése",
+    "section": "1.1 Elérhetőség",
+    "text": "1.1 Elérhetőség\nKérdés esetén email-ben vagyok elérhető, vagy fogadóórában állok rendelkezésre.\nabari.kalman@arts.unideb.hu"
+  },
+  {
+    "objectID": "index.html#jegyszerzés",
+    "href": "index.html#jegyszerzés",
+    "title": "Társas hálózatok elemzése",
+    "section": "1.2 Jegyszerzés",
+    "text": "1.2 Jegyszerzés\nA félév során két ZH-t írnak a hallgatók. A két ZH alapján megajánlott jegyet kapnak. Aki nem írta meg a ZH-kat, vagy nem felel meg számára a megajánlott jegy, írásbeli vizsgát tehet a vizsgaidőszakban. Egyik ZH sem lehet elégtelen. A magyar nyelvű irodalmak kötelezők és tartalmuk a ZH-kon és a vizsgán számonkérhető, az angol nyelvű irodalmak csak ajánlottak.\nUgyan a végső jegy összetételét a két ZH 50-50%-ban meghatározza, de plusz százalékpontok gyűjthetők például házi feladatok, kiselőadások és órai aktivitás alapján. A végső jegy meghatározása a következő táblázat alapján történik:\n\nJegyszerzés\n\n\nEredmény\nMegajánlott jegy\n\n\n\n\n0–50%\nelégtelen\n\n\n51–60%\nelégséges\n\n\n61–74%\nközepes\n\n\n75–85%\njó\n\n\n86%–\njeles"
+  },
+  {
+    "objectID": "index.html#a-kurzus-formája",
+    "href": "index.html#a-kurzus-formája",
+    "title": "Társas hálózatok elemzése",
+    "section": "1.3 A kurzus formája",
+    "text": "1.3 A kurzus formája\nA kurzus teljes mértékben gyakorlati jellegű, az önálló hálózatelemzéshez szükséges ismeretek elsajátítása a cél. A kurzus során az RStudio/R programcsomagot használjuk."
+  },
+  {
+    "objectID": "index.html#szoftverek",
+    "href": "index.html#szoftverek",
+    "title": "Társas hálózatok elemzése",
+    "section": "1.4 Szoftverek",
+    "text": "1.4 Szoftverek\nA számítógépünkre telepítsük a következő szoftvercsomagokat:\n\nR - https://www.r-project.org/\nRStudio Desktop - https://posit.co/products/open-source/rstudio/\nR csomagok:\n\n\ninstall.packages(\"igraph\")\ninstall.packages(\"qgraph\")"
+  },
+  {
+    "objectID": "index.html#olvasmányok",
+    "href": "index.html#olvasmányok",
+    "title": "Társas hálózatok elemzése",
+    "section": "1.5 Olvasmányok",
+    "text": "1.5 Olvasmányok\n\nKötelező:\n\nBarabási (2011)\nMérei (1998, o. 44–323)\nCsermely (2005, o. 1–4, 8 fejezetek)\n\nAjánlott olvasmányok\n\nMolnár (2020)\nHoffman és mtsai. (2022)\n\n\n\n\n\n\nBarabási, A.-L. (2011). Behálózva. A hálózatok új tudománya. Helikon Kiadó.\n\n\nCsermely, P. (2005). A rejtett hálózatok ereje. Vince Kiadó. http://linkgroup.semmelweis.hu/weaklinks_HU.php\n\n\nHoffman, T., Basa, B., & N. Kollár, K. (2022). Új sztenderdek a magyar szociometriai gyakorlatban. https://doi.org/10.17627/ALKPSZICH.2022.1.67\n\n\nMérei, F. (1998). Közösségek rejtett hálózata. Osiris Kiadó.\n\n\nMolnár, L. (2020). A hálózatelemzés alapfogalmai  gráfok, centralitás, szomszédosság, hidak és a kis világ. In Scientia rerum politicarum (o. 123–140). Dialóg Campus. https://doi.org/10.36250/00734.07"
+  },
+  {
+    "objectID": "halozatok_R_ben.html#az-igraph-csomag",
+    "href": "halozatok_R_ben.html#az-igraph-csomag",
+    "title": "2  Hálózatok az R-ben",
+    "section": "2.1 Az igraph csomag",
+    "text": "2.1 Az igraph csomag\n\n2.1.1 igraph objektum létrehozása\nHogyan hozzunk létre igraph objektumot élek listájából?\nA következő adatok egy diákcsoportban fennálló barátságokat tárja fel. A friends adattábla minden sora egy élt jelöl a hálózatban.\n\nlibrary(tidyverse)\nfriends &lt;- tribble(~name1, ~name2, \"Jessie\", \"Sidney\", \"Jessie\", \"Britt\",\n    \"Sidney\", \"Britt\", \"Sidney\", \"Donnie\", \"Karl\", \"Berry\", \"Sidney\", \"Rene\",\n    \"Britt\", \"Rene\", \"Shayne\", \"Sidney\", \"Sidney\", \"Elisha\", \"Sidney\",\n    \"Whitney\", \"Jessie\", \"Whitney\", \"Donnie\", \"Odell\", \"Sidney\", \"Odell\",\n    \"Rene\", \"Whitney\", \"Shayne\", \"Donnie\", \"Jessie\", \"Lacy\", \"Rene\", \"Lacy\",\n    \"Elisha\", \"Eugene\", \"Eugene\", \"Jude\", \"Berry\", \"Odell\", \"Odell\", \"Rickie\",\n    \"Odell\", \"Karl\", \"Britt\", \"Lacy\", \"Elisha\", \"Jude\", \"Lacy\", \"Whitney\",\n    \"Britt\", \"Whitney\", \"Karl\", \"Tommy\")\nhead(friends)  # az első 6 sor\n#&gt; # A tibble: 6 × 2\n#&gt;   name1  name2 \n#&gt;   &lt;chr&gt;  &lt;chr&gt; \n#&gt; 1 Jessie Sidney\n#&gt; 2 Jessie Britt \n#&gt; 3 Sidney Britt \n#&gt; 4 Sidney Donnie\n#&gt; 5 Karl   Berry \n#&gt; 6 Sidney Rene\n\n\n# install.packages('igraph')\nlibrary(igraph)\n\n\n# mátrixszá alakítjuk\nfriends.mat &lt;- as.matrix(friends)\n\n# igraph objektum létrehozása\ng &lt;- graph.edgelist(friends.mat, directed = FALSE)\n\nHogyan jeleníthetjük meg a hálózatot?\n\n# A hálózat megjelenítése\nplot(g)\n\n\n\n\n\n\n2.1.2 Csúcsok és élek számolása\nEgy hálózatról számos információt szerezhetünk az igraph objektum segítségével. Megszámolhatjuk a hálózat csúcsait és éleit.\n\nV(g)  # a csúcsok száma és megnevezése\n#&gt; + 16/16 vertices, named, from b238ffa:\n#&gt;  [1] Jessie  Sidney  Britt   Donnie  Karl    Berry   Rene   \n#&gt;  [8] Shayne  Elisha  Whitney Odell   Lacy    Eugene  Jude   \n#&gt; [15] Rickie  Tommy\nE(g)  # az élek száma és az élek azonosítása csúcsokkal\n#&gt; + 27/27 edges from b238ffa (vertex names):\n#&gt;  [1] Jessie --Sidney  Jessie --Britt   Sidney --Britt  \n#&gt;  [4] Sidney --Donnie  Karl   --Berry   Sidney --Rene   \n#&gt;  [7] Britt  --Rene    Sidney --Shayne  Sidney --Elisha \n#&gt; [10] Sidney --Whitney Jessie --Whitney Donnie --Odell  \n#&gt; [13] Sidney --Odell   Rene   --Whitney Donnie --Shayne \n#&gt; [16] Jessie --Lacy    Rene   --Lacy    Elisha --Eugene \n#&gt; [19] Eugene --Jude    Berry  --Odell   Odell  --Rickie \n#&gt; [22] Karl   --Odell   Britt  --Lacy    Elisha --Jude   \n#&gt; [25] Whitney--Lacy    Britt  --Whitney Karl   --Tommy\n\n\ngsize(g)  # élek száma\n#&gt; [1] 27\ngorder(g)  # csúcsok száma\n#&gt; [1] 16"
+  },
+  {
+    "objectID": "references.html",
+    "href": "references.html",
+    "title": "References",
+    "section": "",
+    "text": "Barabási, A.-L. (2011). Behálózva. A hálózatok új tudománya.\nHelikon Kiadó.\n\n\nCsermely, P. (2005). A rejtett hálózatok ereje. Vince Kiadó. http://linkgroup.semmelweis.hu/weaklinks_HU.php\n\n\nHoffman, T., Basa, B., & N. Kollár, K. (2022). Új sztenderdek a\nmagyar szociometriai gyakorlatban. https://doi.org/10.17627/ALKPSZICH.2022.1.67\n\n\nMérei, F. (1998). Közösségek rejtett hálózata. Osiris Kiadó.\n\n\nMolnár, L. (2020). A\nhálózatelemzés alapfogalmai\n gráfok, centralitás,\nszomszédosság, hidak és a kis világ. In Scientia rerum\npoliticarum (pp. 123–140). Dialóg Campus. https://doi.org/10.36250/00734.07"
+  }
+]

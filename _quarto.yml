@@ -1,0 +1,33 @@
+project:
+  type: book
+  output-dir: docs
+
+editor: source
+lang: hu
+language: hungarian.yml
+toc-depth: 4
+  
+
+book:
+  title: "Társas hálózatok elemzése"
+  author: "Abari Kálmán"
+  date: "2023. 09. 11."
+  chapters:
+    - index.qmd
+    - tematika.qmd
+    - 01_halozatok_R_ben.qmd
+    - 02_alapfogalmak.qmd
+    # - 01_alapfogalmak.qmd
+    # - summary.qmd
+    - references.qmd
+
+bibliography: references.bib
+
+format:
+  html:
+    theme: cosmo
+  pdf:
+    documentclass: scrreprt
+
+csl: apa.csl
+

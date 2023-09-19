@@ -125,6 +125,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <div class="pt-lg-2 mt-2 text-left sidebar-header">
     <div class="sidebar-title mb-0 py-0">
       <a href="./">Társas hálózatok elemzése</a> 
+        <div class="sidebar-tools-main">
+    <a href="https://github.com/abarik/tarsas_halozatok_elemzese_2023_24_1" title="Source Code" class="quarto-navigation-tool px-1" aria-label="Source Code"><i class="bi bi-github"></i></a>
+</div>
     </div>
       </div>
         <div class="mt-2 flex-shrink-0 align-items-center">
@@ -312,10 +315,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>A fontos információk könnyen lekérdezhetők.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">V</span>(g)</span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; + 7/7 vertices, named, from 8aebe26:</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; + 7/7 vertices, named, from 4233962:</span></span>
 <span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; [1] A B C D E F G</span></span>
 <span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a><span class="fu">E</span>(g)</span>
-<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; + 7/7 edges from 8aebe26 (vertex names):</span></span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; + 7/7 edges from 4233962 (vertex names):</span></span>
 <span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; [1] A--B A--C A--D A--E A--F E--F F--G</span></span></code><button title="Másolás vágóasztalra" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>Egy létező gráf szomszédsági mátrixa könnyen meghatározható.</p>
@@ -478,19 +481,19 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div class="cell">
 <div class="sourceCode cell-code" id="cb15"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="co"># gyűrű létrehozása</span></span>
 <span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(<span class="fu">print_all</span>(<span class="fu">make_ring</span>(<span class="dv">5</span>)))</span>
-<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; IGRAPH 8c32f57 U--- 5 5 -- Ring graph</span></span>
+<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; IGRAPH 431ae8c U--- 5 5 -- Ring graph</span></span>
 <span id="cb15-4"><a href="#cb15-4" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; + attr: name (g/c), mutual (g/l), circular (g/l)</span></span>
-<span id="cb15-5"><a href="#cb15-5" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; + edges from 8c32f57:</span></span>
+<span id="cb15-5"><a href="#cb15-5" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; + edges from 431ae8c:</span></span>
 <span id="cb15-6"><a href="#cb15-6" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; [1] 1--2 2--3 3--4 4--5 1--5</span></span>
 <span id="cb15-7"><a href="#cb15-7" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(<span class="fu">print_all</span>(<span class="fu">make_ring</span>(<span class="dv">10</span>)))</span>
-<span id="cb15-8"><a href="#cb15-8" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; IGRAPH 8c34670 U--- 10 10 -- Ring graph</span></span>
+<span id="cb15-8"><a href="#cb15-8" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; IGRAPH 431c1ff U--- 10 10 -- Ring graph</span></span>
 <span id="cb15-9"><a href="#cb15-9" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; + attr: name (g/c), mutual (g/l), circular (g/l)</span></span>
-<span id="cb15-10"><a href="#cb15-10" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; + edges from 8c34670:</span></span>
+<span id="cb15-10"><a href="#cb15-10" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; + edges from 431c1ff:</span></span>
 <span id="cb15-11"><a href="#cb15-11" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;  [1] 1-- 2 2-- 3 3-- 4 4-- 5 5-- 6 6-- 7 7-- 8 8-- 9 9--10 1--10</span></span>
 <span id="cb15-12"><a href="#cb15-12" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(<span class="fu">print_all</span>(<span class="fu">make_ring</span>(<span class="dv">20</span>)))</span>
-<span id="cb15-13"><a href="#cb15-13" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; IGRAPH 8c38c73 U--- 20 20 -- Ring graph</span></span>
+<span id="cb15-13"><a href="#cb15-13" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; IGRAPH 431f922 U--- 20 20 -- Ring graph</span></span>
 <span id="cb15-14"><a href="#cb15-14" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; + attr: name (g/c), mutual (g/l), circular (g/l)</span></span>
-<span id="cb15-15"><a href="#cb15-15" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; + edges from 8c38c73:</span></span>
+<span id="cb15-15"><a href="#cb15-15" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; + edges from 431f922:</span></span>
 <span id="cb15-16"><a href="#cb15-16" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;  [1]  1-- 2  2-- 3  3-- 4  4-- 5  5-- 6  6-- 7  7-- 8  8-- 9 ...</span></span>
 <span id="cb15-17"><a href="#cb15-17" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; [10] 10--11 11--12 12--13 13--14 14--15 15--16 16--17 17--18 ...</span></span>
 <span id="cb15-18"><a href="#cb15-18" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; [19] 19--20  1--20</span></span></code><button title="Másolás vágóasztalra" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -554,9 +557,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>A korábbi példában létrehozott <code>g</code> gráf egyetlen csúcs attribútummal rendelkezik. A csúcsok nevével vagy más néven címkéjével.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb18"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a>g <span class="co"># az igraph objektum kiírása a képernyőre</span></span>
-<span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; IGRAPH 8aebe26 UN-- 7 7 -- </span></span>
+<span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; IGRAPH 4233962 UN-- 7 7 -- </span></span>
 <span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; + attr: name (v/c)</span></span>
-<span id="cb18-4"><a href="#cb18-4" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; + edges from 8aebe26 (vertex names):</span></span>
+<span id="cb18-4"><a href="#cb18-4" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; + edges from 4233962 (vertex names):</span></span>
 <span id="cb18-5"><a href="#cb18-5" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; [1] A--B A--C A--D A--E A--F E--F F--G</span></span></code><button title="Másolás vágóasztalra" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>A csúcsok és élek aktuális attribútumait könnyen meghatározhatjuk.</p>
@@ -638,14 +641,14 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>Különösen nagy hálózatok esetében fontos lehet a számunkra érdekes élek lekérdezése vagy szűrése. A dupla szögletes zárójelet (<code>[[</code>) használhatjuk a kívánt élek eléréséhez. Az <code>.inc()</code> segítségével a csúcsok nevére tehetünk megszorítást, de egyszerűen használhatjuk az élek egyes attribútumait is.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb29"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a><span class="fu">E</span>(g)[[<span class="fu">.inc</span>(<span class="st">'E'</span>)]] <span class="co"># azon élek leszűrése, ahol az egyik csúcs az 'E'</span></span>
-<span id="cb29-2"><a href="#cb29-2" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; + 2/7 edges from 8aebe26 (vertex names):</span></span>
+<span id="cb29-2"><a href="#cb29-2" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; + 2/7 edges from 4233962 (vertex names):</span></span>
 <span id="cb29-3"><a href="#cb29-3" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;   tail head tid hid frequency</span></span>
 <span id="cb29-4"><a href="#cb29-4" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 4    A    E   1   5         1</span></span>
 <span id="cb29-5"><a href="#cb29-5" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 6    E    F   5   6         2</span></span></code><button title="Másolás vágóasztalra" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb30"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a><span class="fu">E</span>(g)[[frequency <span class="sc">&gt;=</span> <span class="dv">3</span>]] <span class="co"># azon élek leszűrése, ahol az élek frequency attribútuma legalább 3</span></span>
-<span id="cb30-2"><a href="#cb30-2" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; + 2/7 edges from 8aebe26 (vertex names):</span></span>
+<span id="cb30-2"><a href="#cb30-2" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; + 2/7 edges from 4233962 (vertex names):</span></span>
 <span id="cb30-3"><a href="#cb30-3" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;   tail head tid hid frequency</span></span>
 <span id="cb30-4"><a href="#cb30-4" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 5    A    F   1   6         3</span></span>
 <span id="cb30-5"><a href="#cb30-5" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 7    F    G   6   7         4</span></span></code><button title="Másolás vágóasztalra" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -706,7 +709,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb33-20"><a href="#cb33-20" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb33-21"><a href="#cb33-21" aria-hidden="true" tabindex="-1"></a><span class="co"># Az első 5 csúcs attribútumának lekérdezése, adattábla nézet</span></span>
 <span id="cb33-22"><a href="#cb33-22" aria-hidden="true" tabindex="-1"></a><span class="fu">V</span>(friends_g)[[<span class="dv">1</span><span class="sc">:</span><span class="dv">5</span>]] </span>
-<span id="cb33-23"><a href="#cb33-23" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; + 5/16 vertices, named, from 8cebe35:</span></span>
+<span id="cb33-23"><a href="#cb33-23" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; + 5/16 vertices, named, from 43a2685:</span></span>
 <span id="cb33-24"><a href="#cb33-24" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;     name gender age</span></span>
 <span id="cb33-25"><a href="#cb33-25" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 1 Jessie      M  18</span></span>
 <span id="cb33-26"><a href="#cb33-26" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 2 Sidney      F  19</span></span>
@@ -729,7 +732,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb34-11"><a href="#cb34-11" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb34-12"><a href="#cb34-12" aria-hidden="true" tabindex="-1"></a><span class="co"># Azon élek megjelenítése, amelyek tartalmazzák a "Britt" nevet</span></span>
 <span id="cb34-13"><a href="#cb34-13" aria-hidden="true" tabindex="-1"></a><span class="fu">E</span>(friends_g)[[<span class="fu">.inc</span>(<span class="st">'Britt'</span>)]]  </span>
-<span id="cb34-14"><a href="#cb34-14" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; + 5/27 edges from 8cebe35 (vertex names):</span></span>
+<span id="cb34-14"><a href="#cb34-14" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; + 5/27 edges from 43a2685 (vertex names):</span></span>
 <span id="cb34-15"><a href="#cb34-15" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;      tail    head tid hid hours</span></span>
 <span id="cb34-16"><a href="#cb34-16" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 2  Jessie   Britt   1   3     2</span></span>
 <span id="cb34-17"><a href="#cb34-17" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 3  Sidney   Britt   2   3     2</span></span>
@@ -739,7 +742,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb34-21"><a href="#cb34-21" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb34-22"><a href="#cb34-22" aria-hidden="true" tabindex="-1"></a><span class="co"># Az összes olyan él (barát) megjelenítése, akik hetente 4 óránál többet vagy 4 órát töltenek együtt</span></span>
 <span id="cb34-23"><a href="#cb34-23" aria-hidden="true" tabindex="-1"></a><span class="fu">E</span>(friends_g)[[hours<span class="sc">&gt;=</span><span class="dv">4</span>]]  </span>
-<span id="cb34-24"><a href="#cb34-24" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; + 6/27 edges from 8cebe35 (vertex names):</span></span>
+<span id="cb34-24"><a href="#cb34-24" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; + 6/27 edges from 43a2685 (vertex names):</span></span>
 <span id="cb34-25"><a href="#cb34-25" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;      tail    head tid hid hours</span></span>
 <span id="cb34-26"><a href="#cb34-26" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 6  Sidney    Rene   2   7     5</span></span>
 <span id="cb34-27"><a href="#cb34-27" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 7   Britt    Rene   3   7     5</span></span>
@@ -856,7 +859,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div class="cell">
 <div class="sourceCode cell-code" id="cb45"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb45-1"><a href="#cb45-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Az összes olyan él (barát) megjelenítése, akik hetente 5 óránál többet vagy 5 órát töltenek együtt</span></span>
 <span id="cb45-2"><a href="#cb45-2" aria-hidden="true" tabindex="-1"></a><span class="fu">E</span>(friends2_g)[[hours <span class="sc">&gt;=</span> <span class="dv">5</span>]]</span>
-<span id="cb45-3"><a href="#cb45-3" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; + 4/25 edges from 8d5f8ee (vertex names):</span></span>
+<span id="cb45-3"><a href="#cb45-3" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; + 4/25 edges from 43f5bc5 (vertex names):</span></span>
 <span id="cb45-4"><a href="#cb45-4" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;         tail      head tid hid hours</span></span>
 <span id="cb45-5"><a href="#cb45-5" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 5     Kelley Valentine   3   6     5</span></span>
 <span id="cb45-6"><a href="#cb45-6" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 8     Ronald   Jasmine   4   8     5</span></span>
@@ -1052,11 +1055,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb62-4"><a href="#cb62-4" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; [1] FALSE</span></span>
 <span id="cb62-5"><a href="#cb62-5" aria-hidden="true" tabindex="-1"></a><span class="fu">eulerian_path</span>(g)</span>
 <span id="cb62-6"><a href="#cb62-6" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; $epath</span></span>
-<span id="cb62-7"><a href="#cb62-7" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; + 8/8 edges from 8e86ab1 (vertex names):</span></span>
+<span id="cb62-7"><a href="#cb62-7" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; + 8/8 edges from 44d306f (vertex names):</span></span>
 <span id="cb62-8"><a href="#cb62-8" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; [1] A--B A--B A--C A--C A--D B--D B--C C--D</span></span>
 <span id="cb62-9"><a href="#cb62-9" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; </span></span>
 <span id="cb62-10"><a href="#cb62-10" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; $vpath</span></span>
-<span id="cb62-11"><a href="#cb62-11" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; + 9/4 vertices, named, from 8e86ab1:</span></span>
+<span id="cb62-11"><a href="#cb62-11" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; + 9/4 vertices, named, from 44d306f:</span></span>
 <span id="cb62-12"><a href="#cb62-12" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; [1] A B A C A D B C D</span></span></code><button title="Másolás vágóasztalra" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="cell">
@@ -1084,10 +1087,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb64"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb64-1"><a href="#cb64-1" aria-hidden="true" tabindex="-1"></a><span class="fu">V</span>(g) <span class="co"># a csúcsok száma és megnevezése</span></span>
-<span id="cb64-2"><a href="#cb64-2" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; + 4/4 vertices, from 8e9e1d6:</span></span>
+<span id="cb64-2"><a href="#cb64-2" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; + 4/4 vertices, from 44e364a:</span></span>
 <span id="cb64-3"><a href="#cb64-3" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; [1] 1 2 3 4</span></span>
 <span id="cb64-4"><a href="#cb64-4" aria-hidden="true" tabindex="-1"></a><span class="fu">E</span>(g) <span class="co"># az élek száma és az élek azonosítása csúcsokkal</span></span>
-<span id="cb64-5"><a href="#cb64-5" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; + 4/4 edges from 8e9e1d6:</span></span>
+<span id="cb64-5"><a href="#cb64-5" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; + 4/4 edges from 44e364a:</span></span>
 <span id="cb64-6"><a href="#cb64-6" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; [1] 1--2 1--3 2--3 2--4</span></span>
 <span id="cb64-7"><a href="#cb64-7" aria-hidden="true" tabindex="-1"></a><span class="fu">gsize</span>(g) <span class="co"># élek száma</span></span>
 <span id="cb64-8"><a href="#cb64-8" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; [1] 4</span></span>
@@ -1125,10 +1128,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb66"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb66-1"><a href="#cb66-1" aria-hidden="true" tabindex="-1"></a><span class="fu">V</span>(g) <span class="co"># a csúcsok száma és megnevezése</span></span>
-<span id="cb66-2"><a href="#cb66-2" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; + 4/4 vertices, from 8eb1fce:</span></span>
+<span id="cb66-2"><a href="#cb66-2" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; + 4/4 vertices, from 44f276c:</span></span>
 <span id="cb66-3"><a href="#cb66-3" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; [1] 1 2 3 4</span></span>
 <span id="cb66-4"><a href="#cb66-4" aria-hidden="true" tabindex="-1"></a><span class="fu">E</span>(g) <span class="co"># az élek száma és az élek azonosítása csúcsokkal</span></span>
-<span id="cb66-5"><a href="#cb66-5" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; + 4/4 edges from 8eb1fce:</span></span>
+<span id="cb66-5"><a href="#cb66-5" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; + 4/4 edges from 44f276c:</span></span>
 <span id="cb66-6"><a href="#cb66-6" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; [1] 1-&gt;2 3-&gt;1 3-&gt;2 2-&gt;4</span></span>
 <span id="cb66-7"><a href="#cb66-7" aria-hidden="true" tabindex="-1"></a><span class="fu">gsize</span>(g) <span class="co"># élek száma</span></span>
 <span id="cb66-8"><a href="#cb66-8" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; [1] 4</span></span>

@@ -12,11 +12,14 @@ book:
   title: "Társas hálózatok elemzése"
   author: "Abari Kálmán"
   date: "2023. 09. 11."
+  search: true
+  repo-url: https://github.com/abarik/tarsas_halozatok_elemzese_2023_24_1
   chapters:
     - index.qmd
     - tematika.qmd
     - 01_halozatok_R_ben.qmd
     - 02_alapfogalmak.qmd
+    - 03_fontos_csucsok.qmd
     # - 01_alapfogalmak.qmd
     # - summary.qmd
     - references.qmd

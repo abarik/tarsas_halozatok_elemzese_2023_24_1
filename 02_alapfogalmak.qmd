@@ -615,6 +615,86 @@ plot(friends2_g2,
 ```
 
 
+#### Feladat
+
+>Hozzuk létre a következő gráfot, írassuk ki a szomszédsági mátrixát, a `degree()` függvénnyel a fokszámokat, az átlagos fokszámot és a `degree.distribution()` függvénnyel a fokszámeloszlást.
+
+
+```{r}
+#| echo: false
+
+library(tidyverse)
+friends <- tribble(
+                ~name1,   ~name2,
+                1, 2,
+                1, 3,
+                2, 3,
+                2, 4
+)
+friends.mat <- as.matrix(friends)
+g <- graph.edgelist(friends.mat, directed = FALSE)
+# A hálózat megjelenítése
+plot(g)
+
+```
+
+
+Hozzuk létre a fenti irányítatlan gráfot az élek listájából:
+
+```{r}
+friends <- tribble(
+                ~name1,   ~name2,
+                1, 2,
+                1, 3,
+                2, 3,
+                2, 4
+)
+friends.mat <- as.matrix(friends)
+g <- graph.edgelist(friends.mat, directed = FALSE)
+```
+
+A hálózat megjelenítése:
+
+```{r}
+plot(g)
+```
+
+
+Szomszédsági mátrix:
+
+```{r}
+as_adjacency_matrix(g)
+```
+
+A gráf lekérdezése:
+
+```{r}
+V(g) # a csúcsok száma és megnevezése
+E(g) # az élek száma és az élek azonosítása csúcsokkal
+vcount(g) # élek száma
+ecount(g) # csúcsok száma
+```
+
+Az egyes csúcsok fokszámai:
+
+```{r}
+degree(g) 
+```
+
+A fokszámok átlaga:
+
+```{r}
+mean(degree(g)) 
+```
+
+A fokszámeloszlás:
+
+```{r}
+degree.distribution(g) 
+```
+
+
+
 ## Königsbergi hidak problémája - 1736
 
 Haladjunk át minden hídon de csak pontosan egyszer. [Részletek.](https://hu.wikipedia.org/wiki/A_k%C3%B6nigsbergi_hidak_probl%C3%A9m%C3%A1ja)
@@ -705,64 +785,5 @@ plot(g)
 has_eulerian_path(g)
 has_eulerian_cycle(g)
 eulerian_path(g)
-```
-
-
-
-
-
-```{r}
-friends <- tribble(
-                ~name1,   ~name2,
-                1, 2,
-                1, 3,
-                2, 3,
-                2, 4
-)
-friends.mat <- as.matrix(friends)
-g <- graph.edgelist(friends.mat, directed = FALSE)
-# A hálózat megjelenítése
-plot(g)
-as_adjacency_matrix(g)
-```
-
-
-```{r}
-V(g) # a csúcsok száma és megnevezése
-E(g) # az élek száma és az élek azonosítása csúcsokkal
-gsize(g) # élek száma
-gorder(g) # csúcsok száma
-degree(g) # fokszámok
-mean(degree(g)) # fokszámok átlaga
-degree.distribution(g) # fokszámeloszlás
-```
-
-
-
-```{r}
-friends <- tribble(
-                ~name1,   ~name2,
-                1, 2,
-                3, 1,
-                3, 2,
-                2, 4
-)
-friends.mat <- as.matrix(friends)
-g <- graph.edgelist(friends.mat, directed = TRUE)
-# A hálózat megjelenítése
-plot(g)
-as_adjacency_matrix(g)
-```
-
-
-```{r}
-V(g) # a csúcsok száma és megnevezése
-E(g) # az élek száma és az élek azonosítása csúcsokkal
-gsize(g) # élek száma
-gorder(g) # csúcsok száma
-is.directed(g) # irányított gráf
-degree(g) # fokszámok 
-mean(degree(g)) # fokszámok átlaga
-degree.distribution(g) # fokszámeloszlás
 ```
 

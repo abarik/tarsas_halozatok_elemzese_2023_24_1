@@ -61,13 +61,7 @@ install.packages("qgraph")
     
 ## Linkek
 
-- http://linkgroup.semmelweis.hu/docs/09-tarsadalmi-halok.pdf,
-- http://szociogram.hu/blog/wp-content/uploads/2015/04/PedSzakpszichSzakdolgozatGyT.pdf
-
-
-Carolan, B. V. (2014). Social network analysis and education: Theory, methods and applications. Thousand Oaks, CA: SAGE Publications.  (Note: Free access arranged through the UMN Library. Follow the link above.)
-Optional texts: 
-Scott, J. (2013). Social network analysis (3rd ed.). Thousand Oaks, CA: SAGE Publications.
-Newman, M. (2018). Networks. Oxford University Press. 
+- <http://linkgroup.semmelweis.hu/docs/09-tarsadalmi-halok.pdf>
+- <http://szociogram.hu/blog/wp-content/uploads/2015/04/PedSzakpszichSzakdolgozatGyT.pdf>
 
 

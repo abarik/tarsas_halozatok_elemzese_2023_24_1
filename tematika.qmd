@@ -19,7 +19,12 @@ editor:
 
 ## A kapcsolathálózati szemlélet. Gráfelméleti alapok.
 
-- @Barabasi2011 [15-47] (1-2. fejezet)
+- @Barabasi2011 [15-47] (1-3. fejezet)
 
 - @Molnar2020
 
+## Irányított gráfok. Centralitás.
+
+- @kurtosi2011
+
+- @Barabasi2011 [48-89] (4-6. fejezet)

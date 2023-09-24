@@ -16,8 +16,8 @@ Egy hálózat (vagy gráf) egy igraph objektumnak feletethető meg. Az fogjuk be
 - `plot()` - hálózat megjelenítése
 - `V()` - a csúcsok száma és megnevezése
 - `E()` - az élek száma és az élek azonosítása csúcsokkal
-- `gsize()` -  az élek száma
-- `gorder()` - a csúcsok száma
+- `gsize()` / `ecount()` -  az élek száma
+- `gorder()` / `vcount()` - a csúcsok száma
 
 ### `igraph` objektum létrehozása
 
@@ -109,11 +109,13 @@ Csak az élek száma.
 
 ```{r}
 gsize(g) # élek száma
+ecount(g) # élek száma
 ```
 
 Csak a csúcsok száma.
 
 ```{r}
 gorder(g) # csúcsok száma
+vcount(g) # csúcsok száma
 ```
 

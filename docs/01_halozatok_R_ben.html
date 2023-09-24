@@ -161,6 +161,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
+  <a href="./03_fontos_csucsok.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Fontos csúcsok</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
   <a href="./references.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Hivatkozások</span></a>
   </div>
@@ -212,8 +218,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li><code>plot()</code> - hálózat megjelenítése</li>
 <li><code>V()</code> - a csúcsok száma és megnevezése</li>
 <li><code>E()</code> - az élek száma és az élek azonosítása csúcsokkal</li>
-<li><code>gsize()</code> - az élek száma</li>
-<li><code>gorder()</code> - a csúcsok száma</li>
+<li><code>gsize()</code> / <code>ecount()</code> - az élek száma</li>
+<li><code>gorder()</code> / <code>vcount()</code> - a csúcsok száma</li>
 </ul>
 <section id="igraph-objektum-létrehozása" class="level3" data-number="1.1.1">
 <h3 data-number="1.1.1" class="anchored" data-anchor-id="igraph-objektum-létrehozása"><span class="header-section-number">1.1.1</span> <code>igraph</code> objektum létrehozása</h3>
@@ -281,7 +287,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co"># A hálózat megjelenítése</span></span>
 <span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(g)</span></code><button title="Másolás vágóasztalra" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
-<p><img src="01_halozatok_R_ben_files/figure-html/unnamed-chunk-6-1.png" class="img-fluid" width="576"></p>
+<p><img src="01_halozatok_R_ben_files/figure-html/unnamed-chunk-6-1.png" class="img-fluid" width="672"></p>
 </div>
 </div>
 </section>
@@ -291,7 +297,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>Részletes információ a csúcsokról.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="fu">V</span>(g) <span class="co"># a csúcsok száma és megnevezése</span></span>
-<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; + 16/16 vertices, named, from 40d4abd:</span></span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; + 16/16 vertices, named, from 962787d:</span></span>
 <span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;  [1] Jessie  Sidney  Britt   Donnie  Karl    Berry   Rene   </span></span>
 <span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;  [8] Shayne  Elisha  Whitney Odell   Lacy    Eugene  Jude   </span></span>
 <span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; [15] Rickie  Tommy</span></span></code><button title="Másolás vágóasztalra" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -299,7 +305,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>Részletes információ az élekről.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="fu">E</span>(g) <span class="co"># az élek száma és az élek azonosítása csúcsokkal</span></span>
-<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; + 27/27 edges from 40d4abd (vertex names):</span></span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; + 27/27 edges from 962787d (vertex names):</span></span>
 <span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;  [1] Jessie --Sidney  Jessie --Britt   Sidney --Britt  </span></span>
 <span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;  [4] Sidney --Donnie  Karl   --Berry   Sidney --Rene   </span></span>
 <span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;  [7] Britt  --Rene    Sidney --Shayne  Sidney --Elisha </span></span>
@@ -313,12 +319,16 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>Csak az élek száma.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="fu">gsize</span>(g) <span class="co"># élek száma</span></span>
-<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; [1] 27</span></span></code><button title="Másolás vágóasztalra" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; [1] 27</span></span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a><span class="fu">ecount</span>(g) <span class="co"># élek száma</span></span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; [1] 27</span></span></code><button title="Másolás vágóasztalra" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>Csak a csúcsok száma.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="fu">gorder</span>(g) <span class="co"># csúcsok száma</span></span>
-<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; [1] 16</span></span></code><button title="Másolás vágóasztalra" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; [1] 16</span></span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a><span class="fu">vcount</span>(g) <span class="co"># csúcsok száma</span></span>
+<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; [1] 16</span></span></code><button title="Másolás vágóasztalra" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 
 
